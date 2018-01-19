@@ -1,0 +1,36 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+
+<dom-module id="icon-toggle">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+            :host([pressed]) paper-icon-button{
+            }
+        </style>
+        <paper-icon-button icon="pets"></paper-icon-button>
+        <!--By default all the icons coming out of this iconset would be 24 px otherwise. Also, our iconset will only have 1 icon for now. -->
+    </template>
+    <script>
+            Polymer({
+              is: 'icon-toggle',
+              properties: {
+                pressed: {
+                  value: false,
+                  notify: true,
+                  reflectToAttribute: true
+                }
+              },
+                listeners: {
+                    'tap':'toggle'
+                },
+                toggle: function() {
+                    this.pressed = !this.pressed;
+                }
+            });
+            </script>
+</dom-module>

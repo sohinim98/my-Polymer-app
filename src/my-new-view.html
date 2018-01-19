@@ -1,0 +1,67 @@
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="icon-toggle.html">
+<link rel="import" href="custom-icons.html">
+<link rel="import" href="bouncy-button.html">
+<link rel="import" href="active-input.html">
+
+<dom-module id="my-new-view">
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+                padding: 16 px;
+                font-family: 'sans-serif', Arial, Helvetica;
+            }
+        </style>
+        <div class="card">
+            <div><span>[[message(isFav)]]</span></div>
+            <div class="circle"><icon-toggle pressed="{{isFav}}"></icon-toggle></div>
+            <p>On a scale of 0-10, how much do you love your pet?</p>
+            <paper-slider min="-100" value="50"></paper-slider>
+            <iron-icon class="custom" icon="custom-icons:fancy-circles"></iron-icon>
+            <br/>
+            <bouncy-button></bouncy-button>
+            <active-input></active-input>
+            <h1>Meaow!</h1>
+            <p>If aliens saw us walking our dogs and picking up their poop, who would they think is in charge?</p>
+            <p>
+                    Pets work wonders for your body, soul, and mind. They stimulate your sense of well-being. They give you love, they give you laughter, but above all they give you happiness. They don’t care about your looks, your financial status, your social standing, your creed, your race, your age, your state of health. They see you for who you are; minus the trappings of your daily existence. It is probably this quality of unconditional acceptance that sets pets apart from humans.
+
+Anyone who has loved and owned a pet knows that a pet can be a source of enormous comfort in times of disappointment or grief.
+The instances for sorrow and heartache tend to build up as one grows older: the loss of a life partner, the loss of a friend, the loss of an ex- colleague, the loss of lifestyle, the loss of familiar surroundings, the loss of physical abilities, the lack of the opportunity to do meaningful work, and most importantly the loss of importance.
+
+Looking after a pet often involves activities, like walking the pet, grooming the pet, playing with the pets. All these activities help to keep its owner active. Pets provide many seniors a reason to get out of bed and carry on with their lives.
+Pet ownership provides several physiological, social and psychological benefits. For senior citizens, whose human support systems have been seriously compromised, pets along with companionship provide affection and understanding as well. Looking after a pet makes seniors feel wanted and needed. This consciousness of being useful fills them with a feeling of self esteem.
+
+Pets counter gloominess and loneliness and often serve as a social conduit to other people. They help satisfy the need to touch and be touched by other living beings. Many old people who have lost their spouses have been known to experience lesser depression in the presence of a pet.
+
+Medical research has proved that pets increase the longevity of those who have had heart attacks. In many cases their presence has been known to reduce blood pressure as well.
+
+Children who have pets have better immune systems and are less likely to take days off from school. While pets cannot be considered as human replacements, there is no doubt of their ability to alleviate feelings of isolation that humans of all ages are prey to.
+
+
+
+
+                    
+            </p>
+        </div>
+    </template>
+    <script>
+    Polymer({
+        is: 'my-new-view',
+        message: function(fav) {
+            if(fav){
+                return "You love your pet, that's awesome!";
+            }
+            else
+            {
+                return "Click if you love your pet!";
+            }
+        }
+    });
+    </script>
+</dom-module>
